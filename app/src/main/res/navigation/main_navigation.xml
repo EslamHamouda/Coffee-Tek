@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashFragment">
+
+  <fragment
+      android:id="@+id/homeFragment"
+      android:name="com.example.coffeeshop.home.ui.HomeFragment"
+      android:label="fragment_home"
+      tools:layout="@layout/fragment_home" >
+    <action
+        android:id="@+id/action_homeFragment_to_detailsFragment"
+        app:destination="@id/detailsFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/splashFragment"
+      android:name="com.example.coffeeshop.SplashFragment"
+      android:label="fragment_splash"
+      tools:layout="@layout/fragment_splash">
+    <action
+        android:id="@+id/action_splashFragment_to_onboardingFragment"
+        app:destination="@id/onboardingFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out"
+        app:popUpTo="@id/splashFragment"
+        app:popUpToInclusive="true" />
+  </fragment>
+  <fragment
+      android:id="@+id/loginFragment"
+      android:name="com.example.coffeeshop.auth.login.ui.LoginFragment"
+      android:label="LoginFragment"
+      tools:layout="@layout/fragment_login">
+    <action
+        android:id="@+id/action_loginFragment_to_registerFragment"
+        app:destination="@id/registerFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_exit_anim" />
+    <action
+        android:id="@+id/action_loginFragment_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right"
+        app:popUpTo="@id/onboardingFragment"
+        app:popUpToInclusive="true" />
+  </fragment>
+  <fragment
+      android:id="@+id/registerFragment"
+      android:name="com.example.coffeeshop.auth.register.ui.RegisterFragment"
+      android:label="RegisterFragment"
+      tools:layout="@layout/fragment_register" >
+    <action
+        android:id="@+id/action_registerFragment_to_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_exit_anim" />
+    <action
+        android:id="@+id/action_registerFragment_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right"
+        app:popUpTo="@id/onboardingFragment"
+        app:popUpToInclusive="true" />
+  </fragment>
+  <fragment
+      android:id="@+id/onboardingFragment"
+      android:name="com.example.coffeeshop.on_boarding.ui.OnboardingFragment"
+      android:label="fragment_onboarding"
+      tools:layout="@layout/fragment_onboarding">
+    <action
+        android:id="@+id/action_onboardingFragment_to_loginFragment"
+        app:destination="@id/loginFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+    <action
+        android:id="@+id/action_onboardingFragment_to_registerFragment"
+        app:destination="@id/registerFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+    <action
+        android:id="@+id/action_onboardingFragment_to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@id/onboardingFragment"
+        app:popUpToInclusive="true" />
+  </fragment>
+  <fragment
+      android:id="@+id/detailsFragment"
+      android:name="com.example.coffeeshop.details.ui.DetailsFragment"
+      android:label="fragment_details"
+      tools:layout="@layout/fragment_details" >
+    <argument android:name="item"
+        app:argType=".home.data.HomeItem" />
+    <action
+        android:id="@+id/action_detailsFragment_to_homeFragment"
+        app:destination="@id/homeFragment" />
+  </fragment>
+
+
+</navigation>
